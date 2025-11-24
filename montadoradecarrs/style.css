@@ -79,7 +79,22 @@ header nav a:hover {
   letter-spacing: 2px;
   margin: 0;
 }
-
+.texth2{
+  width: 60%;
+  background: #000;
+  margin: 40px 0 30px;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+.texth2 h2{
+  color: #f4b400;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
 .carro {
   width: 100%;
   display: flex;
