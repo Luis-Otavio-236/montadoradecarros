@@ -1,21 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendas Vellosci</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Personalização | Vellosci</title>
+    <link rel="stylesheet" href="personalização.css">
 </head>
 <body>
-    <header>
-        <img class="logo" src="img/logovell.png" alt="Vellosci logo >>">
-        <h1>VELLOSCI</h1>
-        <nav>
-            <a href="montadora.html">Sobre</a>
-            <a href="carros.html">Veja os carros</a>
-            <a href="garantia.html">Comunidae</a>
-            <a href="microtech.html">Microtech</a>
-        </nav>
-    </header>
+
+    <!-- MENU LATERAL DE MODELOS -->
+    <aside class="menu-modelos">
+        <h2>Modelos Vellosci</h2>
+        <ul>
+            <li onclick="selecionarModelo('vyntra')">Vyntra GT</li>
+            <li onclick="selecionarModelo('elyon')">Elyon GTS</li>
+            <li onclick="selecionarModelo('trion')">Trion Highline</li>
+            <li onclick="selecionarModelo('kairon')">Kairon Comfortline</li>
+            <li onclick="selecionarModelo('vero')">Vero Elétrico</li>
+            <li onclick="selecionarModelo('elyx')">Elyx</li>
+            <li onclick="selecionarModelo('track')">Track EV</li>
+            <li onclick="selecionarModelo('lancerra')">Lancerra Highline</li>
+        </ul>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="conteudo">
+
+        <!-- TÍTULO DO MODELO -->
+        <div class="titulo-modelo">
+            <h1 id="nomeModelo">Selecione um modelo</h1>
+        </div>
+
+        <!-- ÁREA DO CARRO -->
+        <section class="visual-carro">
+            <img id="imagemCarro" src="Vyntra lado.jpg" alt="Carro">
+        </section>
+
+        <!-- PAINEL DE PERSONALIZAÇÃO -->
+        <section class="opcoes">
+
+            <div class="grupo">
+                <h3>Cor externa</h3>
+                <select id="cor" onchange="atualizarCarro()">
+                    <option value="1">Branco - R$ 4.500</option>
+                    <option value="2">Preto - R$ 0</option>
+                    <option value="3">Caramelo - R$ 1.200</option>
+                    <option value="4">Creme - R$ 5.500</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <h3>Rodas</h3>
+                <select id="roda" onchange="atualizarCarro()">
+                    <option value="1">Aro 18 — R$ 2.500</option>
+                    <option value="2">Aro 19 — R$ 4.200</option>
+                    <option value="3">Aro 20 — R$ 7.000</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <h3>Bancos</h3>
+                <select id="banco" onchange="atualizarCarro()">
+                    <option value="tecido">Tecido — R$ 0</option>
+                    <option value="couro">Couro — R$ 3.000</option>
+                    <option value="premium">Couro Premium — R$ 6.000</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <h3>Som</h3>
+                <select id="som" onchange="atualizarCarro()">
+                    <option value="basic">Básico — R$ 0</option>
+                    <option value="plus">Plus — R$ 1.500</option>
+                    <option value="premium">Premium — R$ 3.000</option>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <h3>Ar-Condicionado</h3>
+                <select id="ar" onchange="atualizarCarro()">
+                    <option value="manual">Manual — R$ 0</option>
+                    <option value="digital">Digital — R$ 2.500</option>
+                    <option value="dual">Dual Zone — R$ 4.500</option>
+                </select>
+            </div>
+
+        </section>
+
+        <!-- PREÇO FINAL -->
+        <section class="preco">
+            <h2>Preço final: R$ <span id="precoFinal">0</span></h2>
+        </section>
+
+    </main>
+
+    <script src="personalização.js"></script>
 </body>
 </html>
