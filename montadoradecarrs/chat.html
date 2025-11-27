@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunidade - Chat Público</title>
 
-    <div class="fundo-cinza"></div>
-
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Chat.css">
 </head>
+
 <body>
 
     <header>
-        <img src="844e91c4-4cb7-458e-825d-316d20af4f57_removalai_preview.png" alt="Logo Vellosci">
+        <img class="logo" src="img/logovell.png" alt="Vellosci logo">
+        <h1>VELLOSCI</h1>
+        <nav>
+            <a href="montadora.html">Sobre</a>
+            <a href="carros.html">Veja os carros</a>
+            <a href="chat.html">Comunidade</a>
+            <a href="microtech.html">Microtech</a>
+        </nav>
     </header>
+    <div class="fundo-cinza">
+        <div id="comunidade-titulo">COMUNIDADE</div>
 
-    <div id="comunidade-titulo">COMUNIDADE</div>
+        <div class="container">
 
-    <div class="container">
+            <h2>CHAT PÚBLICO</h2>
 
-        <h2>CHAT PÚBLICO</h2>
+            <div class="chat-box" id="chatMessages"></div>
 
-        <div class="chat-box" id="chatMessages"></div>
+            <div class="input-area">
+                <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
+                <button id="chatSend">Enviar</button>
+            </div>
 
-        <div class="input-area">
-            <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
-            <button id="chatSend">Enviar</button>
         </div>
 
+        <div class="antfoo">
+            <img class="logo" src="img/logovell.png" alt="logo">
+            <p>vellosci</p>
+            <p>email</p>
+            <p>telefone</p>
+            <p>instagram</p>
+
+            <div class="rodape">
+                <img src="img/logovell.png" alt="logovell">
+                <p>Vellosci Veiculos LTDA.</p>
+            </div>
+        </div>
+        <footer>
+            <p>2025 Microtech Studios LTDA.</p>
+            <p>Todos os direitos reservados</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>Vellosci Veículos Ltda.</p>
-        <p>2025 MicroTech Studios Ltda.<br>All rights reserved.</p>
-        <img src="MicroTech.png" alt="Logo Microtech">
-    </footer>
-
+    </div>
     <!-- JAVASCRIPT -->
     <script src="chat.js"></script>
 </body>
+
 </html>

@@ -1,99 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalização | Vellosci</title>
-    <link rel="stylesheet" href="personalização.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- MENU LATERAL DE MODELOS -->
-    <aside class="menu-modelos">
-        <h2>Modelos Vellosci</h2>
-        <ul>
-            <li onclick="selecionarModelo('vyntra')">Vyntra GT</li>
-            <li onclick="selecionarModelo('elyon')">Elyon GTS</li>
-            <li onclick="selecionarModelo('trion')">Trion Highline</li>
-            <li onclick="selecionarModelo('kairon')">Kairon Comfortline</li>
-            <li onclick="selecionarModelo('vero')">Vero Elétrico</li>
-            <li onclick="selecionarModelo('elyx')">Elyx</li>
-            <li onclick="selecionarModelo('track')">Track EV</li>
-            <li onclick="selecionarModelo('lancerra')">Lancerra Highline</li>
-        </ul>
-    </aside>
+    <div class="conteudo">
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="conteudo">
-
-        <!-- TÍTULO DO MODELO -->
-        <div class="titulo-modelo">
-            <h1 id="nomeModelo">Selecione um modelo</h1>
+        <!-- GRUPO: ESCOLHA DO MODELO (antes menu lateral) -->
+        <div class="opcoes">
+            <div class="grupo">
+                <h3>Modelo</h3>
+                <select id="modeloSelect">
+                    <option value="vyntra">Vyntra</option>
+                    <option value="elyon">Elyon</option>
+                    <option value="trion">Trion</option>
+                    <option value="kairon">Kairon</option>
+                    <option value="vero">Vero</option>
+                    <option value="elyx">Elyx</option>
+                    <option value="track">Track</option>
+                    <option value="lancerra">Lancerra</option>
+                </select>
+            </div>
         </div>
 
-        <!-- ÁREA DO CARRO -->
-        <section class="visual-carro">
-            <img id="imagemCarro" src="Vyntra lado.jpg" alt="Carro">
-        </section>
+        <!-- TÍTULO -->
+        <div class="titulo-modelo">
+            <h1 id="nomeModelo">VYNTRA</h1>
+        </div>
 
-        <!-- PAINEL DE PERSONALIZAÇÃO -->
-        <section class="opcoes">
+        <!-- IMAGEM -->
+        <div class="visual-carro">
+            <img id="imagemCarro" src="img/vyntra_branco.png" alt="Carro">
+        </div>
+
+        <!-- FORMULÁRIO COMPLETO -->
+        <div class="opcoes">
 
             <div class="grupo">
-                <h3>Cor externa</h3>
-                <select id="cor" onchange="atualizarCarro()">
-                    <option value="1">Branco - R$ 4.500</option>
-                    <option value="2">Preto - R$ 0</option>
-                    <option value="3">Caramelo - R$ 1.200</option>
-                    <option value="4">Creme - R$ 5.500</option>
+                <h3>Cor</h3>
+                <select id="cor">
+                    <option value="branco">Branco</option>
+                    <option value="preto">Preto</option>
+                    <option value="vermelho">Vermelho</option>
                 </select>
             </div>
 
             <div class="grupo">
                 <h3>Rodas</h3>
-                <select id="roda" onchange="atualizarCarro()">
-                    <option value="1">Aro 18 — R$ 2.500</option>
-                    <option value="2">Aro 19 — R$ 4.200</option>
-                    <option value="3">Aro 20 — R$ 7.000</option>
+                <select id="roda">
+                    <option value="1">Aro 17</option>
+                    <option value="2">Aro 19 (+R$ 4.200)</option>
+                    <option value="3">Aro 21 (+R$ 7.000)</option>
                 </select>
             </div>
 
             <div class="grupo">
                 <h3>Bancos</h3>
-                <select id="banco" onchange="atualizarCarro()">
-                    <option value="tecido">Tecido — R$ 0</option>
-                    <option value="couro">Couro — R$ 3.000</option>
-                    <option value="premium">Couro Premium — R$ 6.000</option>
+                <select id="banco">
+                    <option value="tecido">Tecido</option>
+                    <option value="couro">Couro (+R$ 3.000)</option>
+                    <option value="premium">Premium (+R$ 6.000)</option>
                 </select>
             </div>
 
             <div class="grupo">
-                <h3>Som</h3>
-                <select id="som" onchange="atualizarCarro()">
-                    <option value="basic">Básico — R$ 0</option>
-                    <option value="plus">Plus — R$ 1.500</option>
-                    <option value="premium">Premium — R$ 3.000</option>
+                <h3>Sistema de Som</h3>
+                <select id="som">
+                    <option value="basico">Básico</option>
+                    <option value="plus">Plus (+R$ 1.500)</option>
+                    <option value="premium">Premium (+R$ 3.000)</option>
                 </select>
             </div>
 
             <div class="grupo">
-                <h3>Ar-Condicionado</h3>
-                <select id="ar" onchange="atualizarCarro()">
-                    <option value="manual">Manual — R$ 0</option>
-                    <option value="digital">Digital — R$ 2.500</option>
-                    <option value="dual">Dual Zone — R$ 4.500</option>
+                <h3>Ar-condicionado</h3>
+                <select id="ar">
+                    <option value="manual">Manual</option>
+                    <option value="digital">Digital (+R$ 2.500)</option>
+                    <option value="dual">Dual Zone (+R$ 4.500)</option>
                 </select>
             </div>
 
-        </section>
+        </div>
 
-        <!-- PREÇO FINAL -->
-        <section class="preco">
-            <h2>Preço final: R$ <span id="precoFinal">0</span></h2>
-        </section>
+        <!-- PREÇO -->
+        <div class="preco">
+            <h2>Preço Final: R$ <span id="precoFinal">350.000</span></h2>
+        </div>
 
-    </main>
+    </div>
 
-    <script src="personalização.js"></script>
+    <script src="script.js"></script>
+
 </body>
+
 </html>
