@@ -4,99 +4,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalização | Vellosci</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Configuração de Carro</title>
+    <link rel="stylesheet" href="personalizacao.css">
 </head>
 
 <body>
 
-    <div class="conteudo">
+    <h1>Personalizar Carro</h1>
 
-        <!-- GRUPO: ESCOLHA DO MODELO (antes menu lateral) -->
-        <div class="opcoes">
-            <div class="grupo">
-                <h3>Modelo</h3>
-                <select id="modeloSelect">
-                    <option value="vyntra">Vyntra</option>
-                    <option value="elyon">Elyon</option>
-                    <option value="trion">Trion</option>
-                    <option value="kairon">Kairon</option>
-                    <option value="vero">Vero</option>
-                    <option value="elyx">Elyx</option>
-                    <option value="track">Track</option>
-                    <option value="lancerra">Lancerra</option>
-                </select>
-            </div>
-        </div>
+    <!-- FORMULÁRIO -->
+    <div>
 
-        <!-- TÍTULO -->
-        <div class="titulo-modelo">
-            <h1 id="nomeModelo">VYNTRA</h1>
-        </div>
+        <label>Modelo:</label>
+        <select id="modelo">
+            <option value="350000">Vyntra (R$ 350.000)</option>
+            <option value="420000">Elyon (R$ 420.000)</option>
+            <option value="380000">Trion (R$ 380.000)</option>
+        </select>
+        <br><br>
 
-        <!-- IMAGEM -->
-        <div class="visual-carro">
-            <img id="imagemCarro" src="img/vyntra_branco.png" alt="Carro">
-        </div>
+        <label>Rodas:</label>
+        <select id="rodas">
+            <option value="0">Aro 17 (R$ 0)</option>
+            <option value="4200">Aro 19 (+R$ 4.200)</option>
+            <option value="7000">Aro 21 (+R$ 7.000)</option>
+        </select>
+        <br><br>
 
-        <!-- FORMULÁRIO COMPLETO -->
-        <div class="opcoes">
+        <label>Bancos:</label>
+        <select id="bancos">
+            <option value="0">Tecido (R$ 0)</option>
+            <option value="3000">Couro (+R$ 3.000)</option>
+            <option value="6000">Premium (+R$ 6.000)</option>
+        </select>
+        <br><br>
 
-            <div class="grupo">
-                <h3>Cor</h3>
-                <select id="cor">
-                    <option value="branco">Branco</option>
-                    <option value="preto">Preto</option>
-                    <option value="vermelho">Vermelho</option>
-                </select>
-            </div>
+        <label>Sistema de Som:</label>
+        <select id="som">
+            <option value="0">Básico (R$ 0)</option>
+            <option value="1500">Plus (+R$ 1.500)</option>
+            <option value="3000">Premium (+R$ 3.000)</option>
+        </select>
+        <br><br>
 
-            <div class="grupo">
-                <h3>Rodas</h3>
-                <select id="roda">
-                    <option value="1">Aro 17</option>
-                    <option value="2">Aro 19 (+R$ 4.200)</option>
-                    <option value="3">Aro 21 (+R$ 7.000)</option>
-                </select>
-            </div>
+        <label>Ar-condicionado:</label>
+        <select id="ar">
+            <option value="0">Manual (R$ 0)</option>
+            <option value="2500">Digital (+R$ 2.500)</option>
+            <option value="4500">Dual Zone (+R$ 4.500)</option>
+        </select>
+        <label>Digite sua senha de desconto:</label>
+        <input type="text" id="senhaDesconto">
 
-            <div class="grupo">
-                <h3>Bancos</h3>
-                <select id="banco">
-                    <option value="tecido">Tecido</option>
-                    <option value="couro">Couro (+R$ 3.000)</option>
-                    <option value="premium">Premium (+R$ 6.000)</option>
-                </select>
-            </div>
+        <button onclick="aplicarDesconto()">Aplicar desconto</button>
 
-            <div class="grupo">
-                <h3>Sistema de Som</h3>
-                <select id="som">
-                    <option value="basico">Básico</option>
-                    <option value="plus">Plus (+R$ 1.500)</option>
-                    <option value="premium">Premium (+R$ 3.000)</option>
-                </select>
-            </div>
-
-            <div class="grupo">
-                <h3>Ar-condicionado</h3>
-                <select id="ar">
-                    <option value="manual">Manual</option>
-                    <option value="digital">Digital (+R$ 2.500)</option>
-                    <option value="dual">Dual Zone (+R$ 4.500)</option>
-                </select>
-            </div>
-
-        </div>
-
-        <!-- PREÇO -->
-        <div class="preco">
-            <h2>Preço Final: R$ <span id="precoFinal">350.000</span></h2>
-        </div>
+        <p id="descontoAplicado"></p>
 
     </div>
 
-    <script src="script.js"></script>
+    <br>
+
+    <!-- PREÇO ATUALIZADO -->
+    <h2>Preço Final: R$ <span id="precoFinal">0</span></h2>
+
+    <script>
+        // ELEMENTOS
+        const modelo = document.getElementById("modelo");
+        const rodas = document.getElementById("rodas");
+        const bancos = document.getElementById("bancos");
+        const som = document.getElementById("som");
+        const ar = document.getElementById("ar");
+        const precoFinal = document.getElementById("precoFinal");
+
+        function atualizarPreco() {
+            let preco =
+                Number(modelo.value) +
+                Number(rodas.value) +
+                Number(bancos.value) +
+                Number(som.value) +
+                Number(ar.value);
+
+            precoFinal.textContent = preco.toLocaleString("pt-BR");
+        }
+
+        // EVENTOS (atualizar sempre que mudar)
+        modelo.addEventListener("change", atualizarPreco);
+        rodas.addEventListener("change", atualizarPreco);
+        bancos.addEventListener("change", atualizarPreco);
+        som.addEventListener("change", atualizarPreco);
+        ar.addEventListener("change", atualizarPreco);
+
+        // CHAMA UMA VEZ AO INICIAR
+        atualizarPreco();
+    </script>
 
 </body>
 

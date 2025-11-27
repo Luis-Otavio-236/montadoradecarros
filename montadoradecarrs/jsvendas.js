@@ -1,54 +1,51 @@
-// Preços base por modelo
-const precosBase = {
-    carro1: 120000,
-    carro2: 155000,
-    carro3: 180000
-    
-};
+document.addEventListener("DOMContentLoaded", () => {
 
-// Elementos
-const listaModelos = document.querySelectorAll("#lista-modelos li");
-const titulo = document.getElementById("tituloSelecionado");
-const imgCarro = document.getElementById("imgCarro");
-const precoTotal = document.getElementById("precoTotal");
+    const precosBase = {
+        vyntra: 350000,
+        elyon: 420000,
+        trion: 380000
+    };
 
-// Inputs
-const cor = document.getElementById("cor");
-const rodas = document.getElementById("rodas");
-const interior = document.getElementById("interior");
+    const adicionais = {
+        roda: { 1: 0, 2: 4200, 3: 7000 },
+        banco: { tecido: 0, couro: 3000, premium: 6000 },
+        som: { basico: 0, plus: 1500, premium: 3000 },
+        ar: { manual: 0, digital: 2500, dual: 4500 }
+    };
 
-let modeloAtual = "carro1";
+    const modelo = document.getElementById("modelo");
+    const cor = document.getElementById("cor");
+    const roda = document.getElementById("roda");
+    const banco = document.getElementById("banco");
+    const som = document.getElementById("som");
+    const ar = document.getElementById("ar");
 
-// Atualiza preço
-function atualizarPreco() {
-    const total =
-        precosBase[modeloAtual] +
-        Number(cor.value) +
-        Number(rodas.value) +
-        Number(interior.value);
+    const nomeModelo = document.getElementById("nomeModelo");
+    const imgCarro = document.getElementById("imgCarro");
+    const precoFinal = document.getElementById("preco");
 
-    precoTotal.textContent = total.toLocaleString("pt-BR");
-}
+    function atualizar() {
+        const m = modelo.value;
+        const c = cor.value;
 
-// Clique mudança de modelo
-listaModelos.forEach(item => {
-    item.addEventListener("click", () => {
-        modeloAtual = item.dataset.modelo;
+        nomeModelo.textContent = m.toUpperCase();
+        imgCarro.src = `img/${m}_${c}.png`;
 
-        // Troca nome
-        titulo.textContent = item.textContent;
+        let preco = precosBase[m];
+        preco += adicionais.roda[roda.value];
+        preco += adicionais.banco[banco.value];
+        preco += adicionais.som[som.value];
+        preco += adicionais.ar[ar.value];
 
-        // Troca imagem
-        imgCarro.src = `img/${modeloAtual}.png`;
+        precoFinal.textContent = preco.toLocaleString("pt-BR");
+    }
 
-        atualizarPreco();
-    });
+    modelo.addEventListener("change", atualizar);
+    cor.addEventListener("change", atualizar);
+    roda.addEventListener("change", atualizar);
+    banco.addEventListener("change", atualizar);
+    som.addEventListener("change", atualizar);
+    ar.addEventListener("change", atualizar);
+
+    atualizar();
 });
-
-// Atualiza preço quando muda algo
-cor.onchange = atualizarPreco;
-rodas.onchange = atualizarPreco;
-interior.onchange = atualizarPreco;
-
-// Inicializa
-atualizarPreco();
