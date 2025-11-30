@@ -570,83 +570,110 @@ select {
   font-size: 2rem;
 }
 
+/* ===== CAIXA PRINCIPAL ===== */
 .desconto-box {
   background: #000;
   color: #f4b400;
-  padding: 25px;
+  padding: 30px;
   margin-top: 60px;
-  border-radius: 12px;
+  border-radius: 14px;
   width: 100%;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
+  border: 1px solid #f4b40055;
 }
 
+/* ===== TÍTULO ===== */
 .desconto-box h2 {
   text-align: center;
-  font-size: 1.9rem;
-  margin-bottom: 15px;
-}
-
-.desconto-box label {
-  display: block;
-  margin: 10px 0 5px;
+  font-size: 2rem;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
-.desconto-box input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  margin-bottom: 12px;
-  font-size: 1rem;
+/* ===== LABELS ===== */
+.desconto-box label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+  color: #f4b400;
 }
 
-.desconto-box button {
+/* ===== INPUTS ===== */
+.desconto-box input {
   width: 100%;
   padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #f4b40055;
+  background: #111;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.desconto-box input:focus {
+  border-color: #f4b400;
+}
+
+/* ===== BOTÃO ===== */
+.desconto-box button {
+  width: 100%;
+  padding: 16px;
   background: #f4b400;
   color: #000;
   border: none;
   font-weight: bold;
-  font-size: 1.2rem;
-  border-radius: 8px;
+  font-size: 1.25rem;
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: background 0.3s;
 }
 
 .desconto-box button:hover {
   background: #d19c00;
 }
 
+/* ===== RESULTADO ===== */
 #resultadoDesconto {
-  margin-top: 20px;
+  margin-top: 25px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  color: #f4b400;
+  min-height: 20px; /* Evita "sumir" quando vazio */
 }
 
-#resultadoDesconto span.senha {
+/* Texto da senha */
+#resultadoDesconto .senha {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #fff;
-  margin: 10px 0;
+  margin: 12px 0;
   font-weight: bold;
 }
 
+/* Botão/link final */
 #resultadoDesconto a {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 15px;
+  margin-top: 20px;
+  padding: 12px 18px;
   background: #f4b400;
   color: #000;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
 
 #resultadoDesconto a:hover {
   background: #d19c00;
 }
 
-/* ====== STYLES DO CARROSSEL (COLE NO FINAL) ====== */
+
+#resultadoDesconto a:hover {
+  background: #d19c00;
+}
+
 
 /* container */
 .vellosci-carousel {

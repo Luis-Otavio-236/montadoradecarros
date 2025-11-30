@@ -263,6 +263,88 @@
             </div>
 
         </div>
+        <div class="desconto-box">
+            <h2>PARTICIPE DO SORTEIO!</h2>
+            <p id="italico">Preencha os dados abaixo e concorra a uma visita exclusiva à fábrica Vellosci.</p>
+
+            <label for="nomeDesc">Nome completo:</label>
+            <input type="text" id="nomeDesc" placeholder="Digite seu nome completo">
+
+            <label for="idadeDesc">Idade:</label>
+            <input type="number" id="idadeDesc" placeholder="Ex: 25">
+
+            <label for="email">E-mail:</label>
+            <input type="text" id="email" placeholder="Digite seu melhor e-mail">
+
+            <label for="telefone">Telefone (WhatsApp):</label>
+            <input type="text" id="telefone" placeholder="(xx) xxxxx-xxxx">
+
+            <label for="Região">Região onde você mora:</label>
+            <select name="Região" id="Região">
+
+                <optgroup label="Sul/Sudeste">
+                    <option value="MG">Minas Gerais</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="PR">Paraná</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </optgroup>
+
+                <optgroup label="Nordeste">
+                    <option value="BA">Bahia</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="CE">Ceará</option>
+                    <option value="PI">Piauí</option>
+                    <option value="MA">Maranhão</option>
+                </optgroup>
+
+                <optgroup label="Norte">
+                    <option value="AM">Amazonas</option>
+                    <option value="PA">Pará</option>
+                    <option value="RR">Roraima</option>
+                    <option value="AP">Amapá</option>
+                    <option value="TO">Tocantins</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="AC">Acre</option>
+                </optgroup>
+
+                <optgroup label="Centro-Oeste">
+                    <option value="GO">Goiás</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="DF">Distrito Federal</option>
+                </optgroup>
+
+            </select>
+
+            <label for="motivo">Por que você gostaria de visitar a fábrica?</label>
+            <textarea id="motivo" placeholder="Escreva uma resposta curta..."></textarea>
+
+            <label for="jaVisitou">Você já visitou alguma fábrica antes?</label>
+            <select id="jaVisitou">
+                <option value="" disabled selected>Selecione</option>
+                <option value="nao">Não, nunca visitei</option>
+                <option value="sim">Sim, já visitei</option>
+            </select>
+
+            <label for="termos">
+                <input type="checkbox" id="termos">
+                Concordo com os termos do sorteio
+            </label>
+
+            <button id="btnSortear">Participar do Sorteio</button>
+
+<div id="resultadoDesconto" style="margin-top: 15px;"></div>
+
+
+        </div>
+
         <div class="antfoo">
             <img class="logo" src="img/logovell.png" alt="logo">
             <p>vellosci</p>
@@ -281,6 +363,8 @@
         </footer>
     </div>
     </div>
+    <script src="jsmontadora.js"></script>
 </body>
+
 
 </html>
