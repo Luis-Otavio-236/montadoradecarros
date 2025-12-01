@@ -1,9 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const precosBase = {
-        vyntra: 350000,
-        elyon: 420000,
-        trion: 380000
+        tynel: 60060,
+        vero: 81600,
+        elyx: 72400,
+        magnus: 146200,
+        elyon: 320000,
+        taurus: 238000,
+        kardon: 508000,
+        voltanna: 482300,
+        trion: 402000,
+        Kairon: 312500,
+        lancerra: 1850600,
+        vyntra: 4560000,
     };
 
     const adicionais = {
@@ -14,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const modelo = document.getElementById("modelo");
-    const cor = document.getElementById("cor");
+    const cor = document.getElementById("cor");   // 🔹 seu original
     const roda = document.getElementById("roda");
     const banco = document.getElementById("banco");
     const som = document.getElementById("som");
@@ -24,12 +33,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgCarro = document.getElementById("imgCarro");
     const precoFinal = document.getElementById("preco");
 
+    // 🔥 NOVO — elementos da galeria de fotos
+    const fotoFrente = document.getElementById("fotoFrente");
+    const fotoLado = document.getElementById("fotoLado");
+    const foto45 = document.getElementById("foto45");
+
+    // 🔥 NOVO — atualiza apenas as imagens 3D
+    function atualizarFotosCarro() {
+        const carro = modelo.options[modelo.selectedIndex].dataset.carro;
+
+        fotoFrente.src = `img/${carro}-frente.png`;
+        fotoLado.src = `img/${carro}-lado.png`;
+        foto45.src = `img/${carro}-45.png`;
+    }
+
     function atualizar() {
         const m = modelo.value;
-        const c = cor.value;
+        const c = cor ? cor.value : ""; // caso não exista seleção de cor
 
-        nomeModelo.textContent = m.toUpperCase();
-        imgCarro.src = `img/${m}_${c}.png`;
+        if (nomeModelo) nomeModelo.textContent = m.toUpperCase();
+        if (imgCarro && c) imgCarro.src = `img/${m}_${c}.png`;
 
         let preco = precosBase[m];
         preco += adicionais.roda[roda.value];
@@ -37,11 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
         preco += adicionais.som[som.value];
         preco += adicionais.ar[ar.value];
 
-        precoFinal.textContent = preco.toLocaleString("pt-BR");
+        if (precoFinal) precoFinal.textContent = preco.toLocaleString("pt-BR");
+
+        atualizarFotosCarro(); // 🔥 adicionando troca de imagens
     }
 
     modelo.addEventListener("change", atualizar);
-    cor.addEventListener("change", atualizar);
+    if (cor) cor.addEventListener("change", atualizar);
     roda.addEventListener("change", atualizar);
     banco.addEventListener("change", atualizar);
     som.addEventListener("change", atualizar);

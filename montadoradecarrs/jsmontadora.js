@@ -35,7 +35,7 @@
         if (escolhido) {
             resultado.innerHTML = `
                 <p style="color: green; font-weight: bold;">
-                    🎉 Parabéns, ${nome}! Você foi selecionado para visitar a fábrica Vellosci!
+                    Parabéns, ${nome}! Você foi selecionado para visitar a fábrica Vellosci!
                 </p>
             `;
         } else {
