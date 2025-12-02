@@ -1065,10 +1065,179 @@ select {
     color: #b7b7b7;
 }
 
-/* Responsividade */
-@media (max-width: 900px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
+/* ================================
+   RESPONSIVIDADE — TELAS < 880px
+================================ */
+@media (max-width: 880px) {
+
+  body {
+    min-width: unset;
+  }
+
+  /* Área principal */
+  .corpo {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  /* Header */
+  header {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+    padding: 20px 5%;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* Bloco de carros / cards */
+  .textpp {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px !important;
+  }
+
+  .textpp .img {
+    float: none;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto 20px auto;
+  }
+
+  /* Texto dentro dos blocos */
+  .textpp h3 {
+    font-size: 1.4rem;
+  }
+
+  .textpp p {
+    font-size: 1rem;
+  }
+
+  /* Histórias (grid vira coluna) */
+  .hist1,
+  .hist2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hist1 .imgHis,
+  .hist2 .imgHis {
+    width: 100%;
+    height: auto;
+  }
+
+  .hist1 .texth3,
+  .hist2 .texth3 {
+    width: 100%;
+    max-width: unset;
+    min-width: unset;
+    text-align: center;
+  }
+
+  /* Títulos menores */
+  .texth1 h1,
+  .texth2 h2 {
+    font-size: 1.5rem;
+  }
+
+  .texth3 {
+    width: 90%;
+  }
+
+  /* Imagens agrupadas */
+  .imgFA {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .imgFA img {
+    width: 45%;
+  }
+
+  /* Menu dos modelos */
+  .menu-modelos {
+    padding: 15px;
+  }
+
+  /* Imagem principal dos modelos */
+  .visual-carro img {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .opcoes {
+    padding: 15px;
+  }
+
+  .preco h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Desconto box */
+  .desconto-box {
+    padding: 20px;
+  }
+
+  .desconto-box button {
+    font-size: 1rem;
+  }
+
+  /* Rodapé */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-logo-vell {
+    width: 95px;
+  }
 }
+.vellosci-carousel {
+    height: 360px;
+  }
+
+  .slide-content {
+    bottom: 20px;
+    left: 4%;
+    max-width: 92%;
+  }
+
+  .slide-content h2 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .slide-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .btn-saiba-mais {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  .carousel-btn {
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  .prev-btn { left: 10px; }
+  .next-btn { right: 10px; }
+
+  .indicators {
+    bottom: 10px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
