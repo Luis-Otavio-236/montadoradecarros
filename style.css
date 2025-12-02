@@ -1,4 +1,4 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -613,7 +613,7 @@ select {
     border: none;
     margin-bottom: 12px;
     font-size: 1rem;
-    background: #fff;     
+    background: #fff;    
     color: #000;
 }
 
@@ -623,7 +623,7 @@ select {
     resize: none; /* impede ficar enorme */
     height: 90px; /* tamanho ideal */
     padding: 12px;
-    background: #fff;   
+    background: #fff;  
     border: none;
     font-size: 1rem;
     color: #000;
@@ -974,6 +974,79 @@ select {
 }
 /* ===== Rodapé Vellosci ===== */
 
+.container {
+    background-color: #000 ;
+    width: 85%;
+    max-width: 700px;
+    margin: 35px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+}
+
+.container h2 {
+    background-color: #000;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0 0 15px 0;
+    border-radius: 6px;
+    font-size: 24px;
+}
+
+.chat-box {
+    background-color: #f1f1f1;
+    height: 420px;
+    overflow-y: auto;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #cfcfcf;
+    font-size: 16px;
+}
+
+.chat-box p {
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+
+/* estilo dos nomes */
+.usuario {
+    font-weight: bold;
+    color: #000;
+}
+
+.atendente {
+    font-weight: bold;
+    color: #b8860b;
+}
+
+.input-area {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    font-size: 16px;
+}
+
+#chatSend {
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#chatSend:hover {
+    background-color: #ffdb4d;
+}
+
 .vellosci-footer {
     width: 100%;
     background: #0a0a0a;       /* fundo oficial */
@@ -1065,179 +1138,25 @@ select {
     color: #b7b7b7;
 }
 
-/* ================================
-   RESPONSIVIDADE — TELAS < 880px
-================================ */
-@media (max-width: 880px) {
-
-  body {
-    min-width: unset;
-  }
-
-  /* Área principal */
-  .corpo {
-    width: 95%;
-    padding: 0 10px;
-  }
-
-  /* Header */
-  header {
-    flex-direction: column;
-    height: auto;
-    gap: 12px;
-    padding: 20px 5%;
-  }
-
-  header nav {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  /* Bloco de carros / cards */
-  .textpp {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px !important;
-  }
-
-  .textpp .img {
-    float: none;
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    margin: 0 auto 20px auto;
-  }
-
-  /* Texto dentro dos blocos */
-  .textpp h3 {
-    font-size: 1.4rem;
-  }
-
-  .textpp p {
-    font-size: 1rem;
-  }
-
-  /* Histórias (grid vira coluna) */
-  .hist1,
-  .hist2 {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hist1 .imgHis,
-  .hist2 .imgHis {
-    width: 100%;
-    height: auto;
-  }
-
-  .hist1 .texth3,
-  .hist2 .texth3 {
-    width: 100%;
-    max-width: unset;
-    min-width: unset;
-    text-align: center;
-  }
-
-  /* Títulos menores */
-  .texth1 h1,
-  .texth2 h2 {
-    font-size: 1.5rem;
-  }
-
-  .texth3 {
-    width: 90%;
-  }
-
-  /* Imagens agrupadas */
-  .imgFA {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  .imgFA img {
-    width: 45%;
-  }
-
-  /* Menu dos modelos */
-  .menu-modelos {
-    padding: 15px;
-  }
-
-  /* Imagem principal dos modelos */
-  .visual-carro img {
-    width: 100%;
-    max-width: 420px;
-  }
-
-  .opcoes {
-    padding: 15px;
-  }
-
-  .preco h2 {
-    font-size: 1.6rem;
-  }
-
-  /* Desconto box */
-  .desconto-box {
-    padding: 20px;
-  }
-
-  .desconto-box button {
-    font-size: 1rem;
-  }
-
-  /* Rodapé */
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .footer-logo-vell {
-    width: 95px;
-  }
-}
-.vellosci-carousel {
-    height: 360px;
-  }
-
-  .slide-content {
-    bottom: 20px;
-    left: 4%;
-    max-width: 92%;
-  }
-
-  .slide-content h2 {
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-  }
-
-  .slide-content p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
-  .btn-saiba-mais {
-    padding: 8px 18px;
-    font-size: 0.9rem;
-  }
-
-  .carousel-btn {
-    padding: 8px;
-    font-size: 18px;
-  }
-
-  .prev-btn { left: 10px; }
-  .next-btn { right: 10px; }
-
-  .indicators {
-    bottom: 10px;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-  }
+footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
+.vellosci-footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.footer-bottom {
+    margin-top: 0 !important;
+}
+
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
