@@ -1152,6 +1152,120 @@ footer {
     margin-top: 0 !important;
 }
 
+/* Estilos iniciais (corrigidos) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Seus estilos normais aqui (não repassarei tudo, apenas a parte de responsividade) */
+
+@media (max-width: 880px) {
+  /* Ajustes para telas até 880px */
+
+  body {
+    min-width: auto; /* libera a largura mínima */
+  }
+
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 5%;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .corpo {
+    width: 95%;
+  }
+
+  /* Ajusta as seções de títulos */
+  .texth1,
+  .texth2 {
+    width: 90%;
+    padding: 15px 10px;
+  }
+
+  /* Ajuste nas grids de história, passando para uma coluna única */
+  .hist1,
+  .hist2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  /* Imagens de história e outros elementos de imagem */
+  .imgHis {
+    width: 100%;
+    height: auto;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* Ajuste nos títulos internos */
+  .hist1 h3,
+  .hist2 h3 {
+    font-size: 1rem;
+  }
+
+  .texth3 h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Ajuste nas imagens do carrossel e nas de destaque */
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Tamanho do texto no slide */
+  .slide-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .slide-content p {
+    font-size: 0.9rem;
+  }
+
+  /* Botões do carrossel */
+  .carousel-btn {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  /* Botões principais */
+  .btn-saiba-mais,
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* Seções de conteúdo e textos */
+  #resultadoDesconto {
+    font-size: 1rem;
+  }
+
+  /* Ajusta rodapé e containers */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Outros ajustes de padding e margens */
+  .vellosci-carousel {
+    height: 420px;
+  }
+}
 
 /* Responsividade */
 @media (max-width: 900px) {
